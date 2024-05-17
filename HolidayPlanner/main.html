@@ -1,37 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - Holiday Planner</title>
+    <title>Holiday Planner</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="libraries/jquery-3.7.1.min.js"></script>
-
-    <script src="scripts/script.js"></script>
-
 </head>
 <body>
     <header>
-       
-            <ul>
-                <h1>Holiday Program Management</h1>
-        <nav>
-            <ul>
-                <li><a href="register.html">Register</a></li>
-                <li><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
-          
-       
+        <div class="nav-container">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">Seçim 1</a></li>
+                    <li><a href="#">Seçim 2</a></li>
+                    <li><a href="#">Seçim 3</a></li>
+                    <li><a href="#">Register and Login</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main id="main-content">
-        <h2>Welcome to Holiday Program Management</h2>
-        <p>Please register or login to start planning your holiday.</p>
-    </main>
-    <footer>
-    
-    </footer>
-    
-    </body>
-</html>
 
+    <main>
+        <div class="banner">
+            <h1>Holiday Planner - Plan your holidays</h1>
+        </div>
+        <div class="flags-container">
+            <div class="flag" data-country="Brazil">
+                <img src="images/brazil-flag.png" alt="Brazil Flag">
+                <div class="todo-list" id="brazil-todo">
+                    <h2>Brazil To-Do List</h2>
+                    <ul>
+                        <li>Football Match</li>
+                        <li>Football Match</li>
+                        <li>Football Match</li>
+                        <li>Football Match</li>
+                    </ul>
+                    
+                    
+                </div>
+            </div>
+            <div class="flag" data-country="Argentina">
+                <img src="images/argentina-flag.png" alt="Argentina Flag">
+                <div class="todo-list" id="argentina-todo">
+                    <h2>Argentina To-Do List</h2>
+                    <ul>
+                        <li>Football Match</li>
+                        <li>Football Match</li>
+                        <li>Football Match</li>
+                        <li>Football Match</li>
+                    </ul>
+                    
+                </div>
+            </div>
+            <div class="flag" data-country="Chile">
+                <img src="images/chile-flag.png" alt="Chile Flag">
+                <div class="todo-list" id="chile-todo">
+                    <h2>Chile To-Do List</h2>
+                    <ul>
+                        <li>Football Match</li>
+                        <li>Football Match</li>
+                        <li>Football Match</li>
+                        <li>Football Match</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flag" data-country="Colombia">
+                <img src="images/colombia-flag.png" alt="Kolombiya Bayrağı">
+                <div class="todo-list" id="colombia-todo">
+                    <h2>Colombia To-Do List</h2>
+                    <ul>
+                        <li>Football Match</li>
+                        <li>Football Match</li>
+                        <li>Football Match</li>
+                        <li>Football Match</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flag" data-country="Peru">
+                <img src="images/peru-flag.png" alt="Peru Flag">
+                <div class="todo-list" id="peru-todo">
+                    <h2>Peru To-Do List</h2>
+                    <ul>
+                        <li>Football Match</li>
+                        <li>Football Match</li>
+                        <li>Football Match</li>
+                        <li>Football Match</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flag" data-country="Uruguay">
+                <img src="images/uruguay-flag.png" alt="Uruguay Flag">
+                <div class="todo-list" id="uruguay-todo">
+                    <h2>Uruguay To-Do List</h2>
+                    <ul>
+                        <li>Football Match</li>
+                        <li>Football Match</li>
+                        <li>Football Match</li>
+                        <li>Football Match</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Holiday Planner</p>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

@@ -1,57 +1,36 @@
-var users = [];
+document.addEventListener('DOMContentLoaded', function() {
+    var flags = document.querySelectorAll('.flag');
 
-$(document).ready(function() {
-    $('#registerForm').submit(function(event) {
-        event.preventDefault();
+    flags.forEach(function(flag) {
+        var todoList = flag.querySelector('.todo-list');
         
-        var username = $('#username').val();
-        var email = $('#email').val();
-        var password = $('#password').val();
-        
-        var newUser = {
-            username: username,
-            email: email,
-            password: password
-        };
-        
-        registerUser(newUser);
-    });
+        flag.addEventListener('click', function(event) {
+            if (event.target.closest('.todo-list')) {
+                // Eğer tıklanan yer to-do list'in içindeyse, hiçbir şey yapma
+                return;
+            }
 
-    function registerUser(newUser) {
-        users.push(newUser);
-        
-        console.log('User registered successfully:', newUser);
-        console.log('Updated users array:', users); // Kullanıcılar dizisini kontrol et
-        alert('Registration successful!');
-    }
-    
-});
-
-$(document).ready(function() {
-    $('#loginForm').submit(function(event) {
-        event.preventDefault();
-        
-        var username = $('#loginUsername').val();
-        var password = $('#loginPassword').val();
-        
-        login(username, password);
-        
-    });
-
-    function login(username, password) {
-        var foundUser = users.find(function(user) {
-            return user.username === username && user.password === password;
+            if (todoList.style.display === 'none' || todoList.style.display === '') {
+                todoList.style.display = 'block';
+            } else {
+                todoList.style.display = 'none';
+            }
         });
-    
-        console.log('Found user:', foundUser); // Kullanıcı bulunduğunda foundUser'ı kontrol et
-    
-        if (foundUser) {
-            alert('Login successful!');
-            $('#main-content').html('<h2>Welcome, ' + foundUser.username + '</h2>');
-            window.location.href = 'main.html';
-        } else {
-            alert('Invalid username or password!');
-        }
-    }
-    
+    });
+
+    var addButtons = document.querySelectorAll('.todo-list button');
+
+    addButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var input = this.previousElementSibling;
+            var newTask = input.value;
+            if (newTask.trim() !== '') {
+                var ul = this.previousElementSibling.previousElementSibling;
+                var li = document.createElement('li');
+                li.textContent = newTask;
+                ul.appendChild(li);
+                input.value = '';
+            }
+        });
+    });
 });

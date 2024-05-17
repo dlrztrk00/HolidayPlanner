@@ -1,82 +1,120 @@
-/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 header {
     background-color: #333;
-    color: #fff;
-    padding: 10px;
+    color: white;
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
     padding: 0;
 }
 
-nav ul li {
-    display: inline;
+.main-nav ul li {
     margin-right: 20px;
 }
 
-nav ul li a {
-    color: #fff;
+.main-nav ul li a {
+    color: white;
     text-decoration: none;
 }
 
-main {
+.banner {
+    margin-top: 80px; /* Header'ın yüksekliği kadar boşluk bırak */
+    text-align: center;
+    background-color: #f8f8f8;
     padding: 20px;
+}
+
+.flags-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+.flag {
+    margin: 10px;
     text-align: center;
+    position: relative;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-}
-
-/* Form Styles */
-form {
-    margin: 0 auto;
-    width: 300px;
-}
-
-form div {
-    margin-bottom: 10px;
-}
-
-form label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-form input[type="text"],
-form input[type="email"],
-form input[type="password"] {
-    width: 100%;
-    padding: 8px;
+.flag img {
+    width: 400px;
+    height: auto;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
 }
 
-form button[type="submit"] {
-    width: 100%;
-    padding: 10px;
+.flag:hover::after {
+    content: attr(data-country);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: #333;
-    color: #fff;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+.todo-list {
+    display: none; /* Başlangıçta gizli */
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.todo-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-list li {
+    padding: 5px 0;
+}
+
+.todo-list input[type="text"] {
+    width: 80%;
+    padding: 5px;
+    margin: 5px 0;
+}
+
+.todo-list button {
+    padding: 5px 10px;
+    margin: 5px 0;
+    background-color: #333;
+    color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
 }
 
-form button[type="submit"]:hover {
-    background-color: #555;
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    left: 0;
 }
