@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="libraries/jquery-3.7.1.min.js"></script>
     <link id="planefavicon" rel="icon" href="images/plane-image.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
+<body >
     <header>
         <div class="nav-container">
             <nav class="main-nav">
                 <ul>
-                    <li>Seçim 1</li>
+                    <li class="fas fa-paper-plane">Holiday Planner</li>
                     <li><a href="#" id="search">Search</a></li>
                     <li><a href="#" id="register">Sign Up</a></li>
                     <li><a href="#" id="Login">Login</a></li>
@@ -22,8 +23,6 @@
             </nav>
         </div>
     </header>
-
-    
 
     <form id="register-form" style="border:1px solid #ccc" class="hidden">
         <div class="container">
@@ -57,11 +56,17 @@
         </div>
         
       
-
     </form>
 
 
     <main>
+
+        <div class="hidden" id="userTodo">
+            <h2>To-Do List</h2>
+            <ul>
+
+            </ul>
+        </div>
        
         <div class="hidden" id="searchClick">
             
@@ -71,7 +76,7 @@
         </div>
 
 
-        <h1 class="banner">Holiday Planner - Plan your holidays</h1>
+        <h1 class="banner">Plan your holidays</h1>
 
         <div class="flags-container">
             <div class="flag" data-country="Brazil">

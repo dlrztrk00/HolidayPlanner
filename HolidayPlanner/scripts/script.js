@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 todoList.style.display = 'none';
             }
         });
+
+        
     });
 
     var addButtons = document.querySelectorAll('.todo-list button');
@@ -50,15 +52,55 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+var isLoggedIn = false;
+
+
+function toggleUserStatus(status) {
+    isLoggedIn = status;
+    if (isLoggedIn) {
+        $('#userTodo').slideDown(); 
+    } else {
+        $('#userTodo').slideUp();
+    }
+}
+
+$('#userInfo').click(function() {
+    if (isLoggedIn) {
+        toggleUserStatus(false);
+    } else {
+        $('#register-form').slideUp();
+        $('#login-form').slideUp();
+        $('#searchClick').slideUp();
+        toggleUserStatus(true); 
+    }
+});
+
+$('.todo-list').on('click', 'li', function() {
+    if (isLoggedIn) {
+        var newTask = $(this).text(); 
+        var todoList = $('#userTodo ul'); 
+        todoList.append('<li>' + newTask + '</li>'); 
+       
+    } else {
+        alert('Please login to add tasks.'); 
+    }
+});
+
+$('#userTodo').on('click', 'li', function() {
+    $(this).remove(); 
+});
+
+
+
+
 
 $(document).ready(function() {
     var users = [];
 
 
-    // Reset button functionality
     $('#reset-button').click(function() {
-        $('#search-box').val(''); // Clear the search box
-        $('.flag').show(); // Show all flags
+        $('#search-box').val(''); 
+        $('.flag').show(); 
     });
 
     $('#register').click(function() {
@@ -80,6 +122,8 @@ $(document).ready(function() {
 
     });
 
+   
+
     $('#login-form').submit(function(e) {
         e.preventDefault();
         var username = $('#loginUser').val();
@@ -97,6 +141,8 @@ $(document).ready(function() {
         } else {
             alert('Invalid username or password.');
         }
+
+        $('#login-form').slideUp();
     });
 
     $('#register-form').submit(function(e) {

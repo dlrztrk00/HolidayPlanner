@@ -3,7 +3,14 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
+      background-image: url('../../images/background.jpg');
+      background-size: cover; 
+      background-position: center; 
+      background-repeat: no-repeat; 
+    
 }
+
 
 header {
     background-color: #333;
@@ -14,6 +21,17 @@ header {
     left: 0;
     z-index: 1000;
 }
+
+#userTodo h2{
+  color:#f1f1f1;
+  margin-left: 45%;
+}
+
+#userTodo ul{
+  color: #333;
+  margin-left: 45%;
+}
+
 
 .nav-container {
     max-width: 1200px;
@@ -38,9 +56,9 @@ header {
 }
 
 .banner {
-    margin-top: 80px; /* Header'ın yüksekliği kadar boşluk bırak */
+    margin-top: 80px; 
     text-align: center;
-    background-color: #f8f8f8;
+    color: #f1f1f1;
     padding: 20px;
 }
 
@@ -138,7 +156,7 @@ footer {
 
 * {box-sizing: border-box}
 
-/* Full-width input fields */
+
   input[type=text], input[type=password] {
   width: 100%;
   padding: 15px;
@@ -158,7 +176,7 @@ hr {
   margin-bottom: 25px;
 }
 
-/* Set a style for all buttons */
+
 button {
   background-color: #04AA6D;
   color: white;
@@ -174,43 +192,27 @@ button:hover {
   opacity:1;
 }
 
-/* Extra styles for the cancel button */
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
-}
-
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn, .signupbtn {
-  float: left;
-  width: 50%;
-}
-
-/* Add padding to container elements */
 .container {
   padding: 16px;
 }
 
-/* Clear floats */
 .clearfix::after {
   content: "";
   clear: both;
   display: table;
 }
 
-/* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
   .cancelbtn, .signupbtn {
     width: 100%;
   }
 }
 
-/* Bordered form */
 form {
+  color: #f1f1f1;
     border: 3px solid #f1f1f1;
   }
-  
-  /* Full-width inputs */
+ 
   input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -220,7 +222,6 @@ form {
     box-sizing: border-box;
   }
   
-  /* Set a style for all buttons */
   button {
     background-color: #04AA6D;
     color: white;
@@ -230,40 +231,33 @@ form {
     cursor: pointer;
     width: 100%;
   }
-  
-  /* Add a hover effect for buttons */
+
   button:hover {
     opacity: 0.8;
   }
   
-  /* Extra style for the cancel button (red) */
   .cancelbtn {
     width: auto;
     padding: 10px 18px;
     background-color: #f44336;
   }
   
-  
-  /* Add padding to containers */
+
   .container {
     padding: 16px;
   }
-  
-  /* The "Forgot password" text */
+ 
   span.psw {
     float: right;
     padding-top: 16px;
   }
-  
-  /* Change styles for span and cancel button on extra small screens */
+
   @media screen and (max-width: 300px) {
     span.psw {
       display: block;
       float: none;
     }
-    .cancelbtn {
-      width: 100%;
-    }
+   
   }
 
   .hidden {
