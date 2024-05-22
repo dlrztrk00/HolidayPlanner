@@ -34,3 +34,61 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+$(document).ready(function() {
+    var users = [];
+
+    // Toggle registration and login forms
+    $('#register').click(function() {
+        $('#register-form').slideToggle();
+        $('#login-form').slideUp(); // Hide the login form if it's currently visible
+    });
+
+    $('#Login').click(function() {
+        $('#login-form').slideToggle();
+        $('#register-form').slideUp(); // Hide the registration form if it's currently visible
+    });
+
+    // Login functionality
+    $('#loginForm').submit(function(e) {
+        e.preventDefault();
+        var email = $('#loginEmail').val();
+        var password = $('#loginPassword').val();
+
+        var user = users.find(function(u) {
+            return u.email === email && u.password === password;
+        });
+
+        if (user) {
+            $('#loggedInUser').text(user.name);
+            $('#selection1 a').text(user.name); // Display user's name in "Seçim 1"
+            $('#loggedInUserInfo').removeClass('d-none');
+            $('#registerFormContainer').addClass('d-none');
+            $('#loginFormContainer').addClass('d-none');
+            $('#form-container').slideUp();
+        } else {
+            alert('Invalid email or password.');
+        }
+    });
+
+    // Registration functionality
+    $('#registerForm').submit(function(e) {
+        e.preventDefault();
+        var name = $('#registerName').val();
+        var email = $('#registerEmail').val();
+        var password = $('#registerPassword').val();
+
+        var newUser = {
+            name: name,
+            email: email,
+            password: password
+        };
+        users.push(newUser);
+
+        alert('Registration successful. You can now login.');
+        console.log(users);
+        $('#form-container').slideUp();
+
+        
+    });
+});
