@@ -32,8 +32,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-});
 
+    var searchButton = document.getElementById('search-button');
+    var searchBox = document.getElementById('search-box');
+    
+    searchButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        var searchTerm = searchBox.value.trim().toLowerCase();
+        flags.forEach(function(flag) {
+            var countryName = flag.getAttribute('data-country').toLowerCase();
+            if (countryName.includes(searchTerm)) {
+                flag.style.display = 'block';
+            } else {
+                flag.style.display = 'none';
+            }
+        });
+    });
+});
 
 
 $(document).ready(function() {
@@ -49,14 +64,16 @@ $(document).ready(function() {
     $('#register').click(function() {
         $('#register-form').slideToggle();
         $('#login-form').slideUp(); 
+         $('#searchClick').slideUp();
     });
 
     $('#Login').click(function() {
         $('#login-form').slideToggle();
         $('#register-form').slideUp(); 
+        $('#searchClick').slideUp();
     });
 
-    $('#search-button').click(function(){
+    $('#search').click(function(){
         $('#searchClick').slideToggle();
         $('#login-form').slideUp();
         $('#register-form').slideUp();
