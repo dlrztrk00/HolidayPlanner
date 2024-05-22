@@ -6,6 +6,7 @@
     <title>Holiday Planner</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="libraries/jquery-3.7.1.min.js"></script>
+    <link id="planefavicon" rel="icon" href="images/plane-image.png" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -13,63 +14,58 @@
             <nav class="main-nav">
                 <ul>
                     <li>Seçim 1</li>
-                    <li>Seçim 2</li>
+                    <li><a href="#" id="search-button">Search</a></li>
                     <li><a href="#" id="register">Sign Up</a></li>
                     <li><a href="#" id="Login">Login</a></li>
+                    <li id="userInfo"></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    
+
     <form id="register-form" style="border:1px solid #ccc" class="hidden">
         <div class="container">
-          <h1>Sign Up</h1>
-          <p>Please fill in this form to create an account.</p>
-          <hr>
-      
-          <label for="email"><b>Email</b></label>
-          <input type="text" placeholder="Enter Email" name="email" required>
-      
-          <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" required>
-      
-          <label for="psw-repeat"><b>Repeat Password</b></label>
-          <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-      
-          <label>
-            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-          </label>
-          <div class="clearfix">
-            <button type="button" class="cancelbtn">Cancel</button>
-            <button type="submit" class="signupbtn">Sign Up</button>
-          </div>
-        </div>
-      </form>
+            <h1>Sign Up</h1>
+            <p>Please fill in this form to create an account.</p>
+    
+            <label for="uname"><b>Username</b></label>
+            <input type="text" id="registerName" placeholder="Enter Username" name="uname" required>
+        
+            <label for="psw"><b>Password</b></label>
+            <input type="password" id="registerPassword" placeholder="Enter Password" name="psw" required>
+        
+            <label for="psw-repeat"><b>Repeat Password</b></label>
+            <input type="password" id="registerPw2" placeholder="Repeat Password" name="psw-repeat" required>
 
-      <form  id="login-form" class="hidden">
-       
+            <div class="clearfix">
+                <button type="submit" class="signupbtn">Sign Up</button>
+            </div>
+        </div>
+    </form>
+
+    <form id="login-form" class="hidden">
         <div class="container">
-          <label for="uname"><b>Username</b></label>
-          <input type="text" placeholder="Enter Username" name="uname" required>
-      
-          <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" required>
-      
-          <button type="submit">Login</button>
-          <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-          </label>
+            <label for="uname"><b>Username</b></label>
+            <input type="text" id="loginUser" placeholder="Enter Username" name="uname" required>
+        
+            <label for="psw"><b>Password</b></label>
+            <input type="password" id="loginPassword" placeholder="Enter Password" name="psw" required>
+        
+            <button type="submit">Login</button>
         </div>
+        
       
-        <div class="container" style="background-color:#f1f1f1">
-          <button type="button" class="cancelbtn">Cancel</button>
-        </div>
-      </form>
+
+    </form>
+
 
     <main>
-        <div class="banner">
-            <h1>Holiday Planner - Plan your holidays</h1>
-        </div>
+       
+
+        <h1 class="banner">Holiday Planner - Plan your holidays</h1>
+
         <div class="flags-container">
             <div class="flag" data-country="Brazil">
                 <img src="images/brazil-flag.png" alt="Brazil Flag">
@@ -77,9 +73,9 @@
                     <h2>Brazil To-Do List</h2>
                     <ul>
                         <li>Football Match</li>
-                        <li>Football Match</li>
-                        <li>Football Match</li>
-                        <li>Football Match</li>
+                        <li>Beach Volleyball</li>
+                        <li>Samba Dance</li>
+                        <li>Amazon Rainforest Tour</li>
                     </ul>
                 </div>
             </div>
@@ -88,10 +84,10 @@
                 <div class="todo-list" id="argentina-todo">
                     <h2>Argentina To-Do List</h2>
                     <ul>
-                        <li>Football Match</li>
-                        <li>Football Match</li>
-                        <li>Football Match</li>
-                        <li>Football Match</li>
+                        <li>Tango Show</li>
+                        <li>Patagonia Hike</li>
+                        <li>Wine Tasting</li>
+                        <li>Iguazu Falls Visit</li>
                     </ul>
                 </div>
             </div>
@@ -100,22 +96,22 @@
                 <div class="todo-list" id="chile-todo">
                     <h2>Chile To-Do List</h2>
                     <ul>
-                        <li>Football Match</li>
-                        <li>Football Match</li>
-                        <li>Football Match</li>
-                        <li>Football Match</li>
+                        <li>Atacama Desert</li>
+                        <li>Patagonia Trek</li>
+                        <li>Wine Tasting</li>
+                        <li>Skiing in Andes</li>
                     </ul>
                 </div>
             </div>
             <div class="flag" data-country="Colombia">
-                <img src="images/colombia-flag.png" alt="Kolombiya Bayrağı">
+                <img src="images/colombia-flag.png" alt="Colombia Flag">
                 <div class="todo-list" id="colombia-todo">
                     <h2>Colombia To-Do List</h2>
                     <ul>
-                        <li>Football Match</li>
-                        <li>Football Match</li>
-                        <li>Football Match</li>
-                        <li>Football Match</li>
+                        <li>Coffee Tour</li>
+                        <li>Cartagena City Tour</li>
+                        <li>Amazon Rainforest</li>
+                        <li>Salsa Dancing</li>
                     </ul>
                 </div>
             </div>
@@ -124,10 +120,10 @@
                 <div class="todo-list" id="peru-todo">
                     <h2>Peru To-Do List</h2>
                     <ul>
-                        <li>Football Match</li>
-                        <li>Football Match</li>
-                        <li>Football Match</li>
-                        <li>Football Match</li>
+                        <li>Machu Picchu</li>
+                        <li>Lake Titicaca</li>
+                        <li>Inca Trail</li>
+                        <li>Lima City Tour</li>
                     </ul>
                 </div>
             </div>
@@ -136,10 +132,10 @@
                 <div class="todo-list" id="uruguay-todo">
                     <h2>Uruguay To-Do List</h2>
                     <ul>
-                        <li>Football Match</li>
-                        <li>Football Match</li>
-                        <li>Football Match</li>
-                        <li>Football Match</li>
+                        <li>Beach Day</li>
+                        <li>Montevideo City Tour</li>
+                        <li>Colonia del Sacramento</li>
+                        <li>Wine Tour</li>
                     </ul>
                 </div>
             </div>
@@ -147,7 +143,7 @@
     </main>
 
     <footer>
-        <p>Holiday Planner</p>
+        <p>Holiday Planner | <a href="contact.html" target="_blank">Contact Us</a></p>
     </footer>
 
    
