@@ -39,6 +39,13 @@ document.addEventListener('DOMContentLoaded', function() {
 $(document).ready(function() {
     var users = [];
 
+
+    // Reset button functionality
+    $('#reset-button').click(function() {
+        $('#search-box').val(''); // Clear the search box
+        $('.flag').show(); // Show all flags
+    });
+
     $('#register').click(function() {
         $('#register-form').slideToggle();
         $('#login-form').slideUp(); 
